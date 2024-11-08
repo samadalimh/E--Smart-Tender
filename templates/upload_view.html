@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Cart</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark text-white">
+	<div class="container-fluid justify-content-center">
+		<span class="navbar-text text-white fs-1 me-3"> Shopping Cart </span>
+		<ul class="navbar-nav">
+			<li class="nav-item"> <a href="" class="nav-link"> Home </a> </li>
+			<li class="nav-item"> <a href="" class="nav-link"> About </a> </li>
+			<li class="nav-item"> <a href="" class="nav-link"> Contact </a> </li>
+			<li class="nav-item"><a href="" class="nav-link"> Login </a> </li>
+		</ul>
+	</div>
+	<form class="d-flex">
+     <input type="search" class="form-control" placeholder="search">
+	</form>
+
+</nav>
+
+<div class="container mt-3 p-3">
+		<div class="row">
+
+          <table class="table table-bordered border-1 border-success table-striped">
+          	<thead class="table-dark">
+          	<tr>
+          		<th>sl No</th>
+          		<th> Name </th>
+				<th> qualification </th>
+				<th> address </th>
+				<th> mobile_no </th>
+				<th> email </th>
+				<th> status </th>
+				<th> photo </th>
+				<th> experience </th>
+
+          	</tr>
+          	</thead>
+
+          	<tbody>
+			  {% for r in udata %}
+          		<tr>
+          			<td> {{forloop.counter}} </td>
+					<td> {{r.name}} </td>
+          			<td> {{r.qualification}} </td>
+					<td> {{r.address}} </td>
+					<td> {{r.mobile_no}} </td>
+					<td> {{r.email}} </td>
+					<td> {{r.status}} </td>
+          			<td><img src="{{r.profile_photo.url}}" style="width:300px;height:300px;"> </td>
+          		</tr>
+			{% endfor %}
+
+          	</tbody>
+          </table>
+
+
+		</div>
+
+	</div>
+
+
+<div class="container-fluid bg-dark mt-1 p-3">
+
+	<div class="row">
+
+     <p class="text-center text-white"> &copy copyright online shopping cart </p>
+	</div>
+
+</div>
